@@ -1,0 +1,12 @@
+{
+    "Workspace Snippet": {
+      "prefix": "", // 留空以避免自动触发
+      "body": [
+        "def solve():",
+        "    ",
+        "for i in range(int(input())):",
+        "    solve()"
+      ],
+      "description": "工作区专属代码片段"
+    }
+  }
