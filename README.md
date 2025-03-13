@@ -1,2 +1,2 @@
 # codeforces
-my code for codeforces contests
+my code for codeforces
