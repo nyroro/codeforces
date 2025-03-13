@@ -1,6 +1,7 @@
 ﻿import math
 table = {}
 def gao(x, v):
+    x = 11*x
     if x not in table:
         table[x] = 0
     table[x] = max(table[x], v)
@@ -11,17 +12,17 @@ def solve():
     for xx,rr in zip(x,r):
         lv = xx-rr
         rv = xx+rr
-        gao(lv, 1)
-        gao(rv, 1)
-        gao(xx, 2*rr+1)
+        gao(lv, 0)
+        gao(rv, 0)
+        gao(xx, rr*rr)
         for i in range(lv+1, xx):
-            v = 2*int(math.sqrt(rr*rr-(xx-i)*(xx-i))) + 1
-            # print(xx, i, v, math.sqrt(rr*rr-(xx-i)*(xx-i)))
+            v = rr*rr-(xx-i)*(xx-i)
             gao(i, v)
             gao(2*xx-i, v)
-    print(sum(table.values()))
+    print(sum([(2*int(math.sqrt(t)) + 1) for t in table.values()]))
     table.clear()
-
-
+    
+    
 for i in range(int(input())):
     solve()
+    
